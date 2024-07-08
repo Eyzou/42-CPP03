@@ -1,26 +1,15 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 11:00:39 by ehamm             #+#    #+#             */
-/*   Updated: 2024/07/08 11:00:40 by ehamm            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 
 #include "ClapTrap.h"
 #include "FlagTrap.h"
 #include "ScavTrap.h"
+#include "DiamondTrap.h"
 
 int main ()
 {
     std::cout << "****TESTING**** " << std::endl;
     std::cout << "Flag trap Poulet is coming... " << std::endl;
 
-    FlagTrap flag("Poulet");
+    DiamondTrap flag("Poulet");
 
     flag.highFivesGuys();
     std::cout << std::endl;

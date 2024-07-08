@@ -1,16 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.h                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 10:59:16 by ehamm             #+#    #+#             */
-/*   Updated: 2024/07/08 10:59:19 by ehamm            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-
 #ifndef CLAPTRAP_H
 # define CLAPTRAP_H
 
@@ -21,20 +8,22 @@ class ClapTrap {
 
     public:
         ClapTrap();
-        ClapTrap(unsigned int hit, unsigned int energy, unsigned int dmg, std::string name);
         ClapTrap(const ClapTrap &src);
+		ClapTrap(std::string name);
+		
         ~ClapTrap();
 
-       void attack(const std::string& target);
-       void takeDamage(unsigned int amount);
-       void beRepaired(unsigned int amount);
+		ClapTrap& operator=(ClapTrap const &rhs);
 
-    protected:
+      	void attack(const std::string& target);
+      	void takeDamage(unsigned int amount);
+       	void beRepaired(unsigned int amount);
+
+    private:
         std::string m_name;
-        int m_hit;
-        int m_energy;
-        int m_damage;
-
+        unsigned int m_hit;
+        unsigned int m_energy;
+        unsigned int m_damage;
 };
 
 #endif //CLAPTRAP_H

@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   FlagTrap.h                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 10:59:57 by ehamm             #+#    #+#             */
-/*   Updated: 2024/07/08 11:00:00 by ehamm            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 
 #ifndef FLAGTRAP_H
 #define FLAGTRAP_H
@@ -25,6 +13,8 @@ class FlagTrap : public ClapTrap {
         FlagTrap(std::string name);
         FlagTrap(const FlagTrap &copy);
         ~FlagTrap();
+
+		ClapTrap& operator=(ClapTrap const &rhs);
 
         void highFivesGuys();
 };
