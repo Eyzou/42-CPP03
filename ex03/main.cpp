@@ -1,17 +1,18 @@
 
-#include "ClapTrap.h"
-#include "FlagTrap.h"
-#include "ScavTrap.h"
 #include "DiamondTrap.h"
 
 int main ()
 {
     std::cout << "****TESTING**** " << std::endl;
-    std::cout << "Flag trap Poulet is coming... " << std::endl;
+    std::cout << "Frag trap Poulet is coming... " << std::endl;
 
-    DiamondTrap flag("Poulet");
+    DiamondTrap poulet("Poulet");
 
-    flag.highFivesGuys();
+    poulet.display();
+    poulet.attack("peppa pig");
+    poulet.takeDamage(9);
+    poulet.display();
+
     std::cout << std::endl;
 
     std::cout << "****END**** " << std::endl;

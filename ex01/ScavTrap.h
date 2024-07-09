@@ -1,9 +1,9 @@
 
 
-
 #ifndef SCAVTRAP_H
 #define SCAVTRAP_H
 
+#include <string>
 #include "ClapTrap.h"
 
 class ScavTrap : public ClapTrap
@@ -18,6 +18,9 @@ class ScavTrap : public ClapTrap
 
         void guardGate();
 		void attack(const std::string& target);
+
+	private:
+		bool m_guardMode;
 };
 
 #endif //SCAVTRAP_H

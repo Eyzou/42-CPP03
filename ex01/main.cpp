@@ -18,7 +18,7 @@ int main ()
 
     std::cout << "Scav Trap Mioche is coming... " << std::endl;
     ScavTrap scav2("Mioche");
-    for(int i = 0; i < 51; i++)
+    for(int i = 0; i < 4; i++)
         scav2.guardGate();
     std::cout << "****END**** " << std::endl;
 

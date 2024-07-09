@@ -10,6 +10,7 @@ class ClapTrap {
         ClapTrap();
         ClapTrap(const ClapTrap &src);
 		ClapTrap(std::string name);
+		ClapTrap(unsigned int hit, unsigned int energy, unsigned int dmg, std::string name);
 		
         ~ClapTrap();
 
@@ -19,7 +20,7 @@ class ClapTrap {
       	void takeDamage(unsigned int amount);
        	void beRepaired(unsigned int amount);
 
-    private:
+    protected:
         std::string m_name;
         unsigned int m_hit;
         unsigned int m_energy;

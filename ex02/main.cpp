@@ -1,19 +1,21 @@
 
 
 #include "ClapTrap.h"
-#include "FlagTrap.h"
+#include "FragTrap.h"
 #include "ScavTrap.h"
 
 int main ()
 {
     std::cout << "****TESTING**** " << std::endl;
-    std::cout << "Flag trap Poulet is coming... " << std::endl;
+    std::cout << "Frag trap Poulet is coming... " << std::endl;
 
-    FlagTrap flag("Poulet");
+    FragTrap Frag("Poulet");
 
-    flag.highFivesGuys();
     std::cout << std::endl;
-
+    Frag.display();
+    std::cout << std::endl;
+    Frag.highFivesGuys();
+    std::cout << std::endl;
     std::cout << "****END**** " << std::endl;
 
     return (0);

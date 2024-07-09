@@ -2,28 +2,28 @@
 #ifndef DIAMONDTRAP_H
 #define DIAMONDTRAP_H
 
-#include "ClapTrap.h"
-#include "FlagTrap.h"
-#include "ScavTrap.h"
-
 #include <string>
 #include <iostream>
+#include "ScavTrap.h"
+#include "FragTrap.h"
 
-class DiamondTrap : Public ClapTrap {
-
+class DiamondTrap: public FragTrap, public ScavTrap
+ {
     public:
 		DiamondTrap();
-        DiamondTrap(std::string name + "_clap_name");
+		DiamondTrap(std::string name);
         DiamondTrap(const DiamondTrap &copy);
-        ~DiamondTrap();
+        virtual ~DiamondTrap();
+        DiamondTrap &operator=(const DiamondTrap &rhs);
 
-		void attack(const std::string& target);
-		void whoAmI();
+		void whoAmI() const;
+		void attack(const std::string &target);
+		void display() const;
 
-    protected:
-    	std::string m_name;
+	private:
+		std::string m_name;
+
 };
 
 
-
-#endif //DIAMONTRAP_H
+#endif //DIAMONDTRAP_H

@@ -1,30 +1,37 @@
 NAME = ClapTrap
-
 CC = c++
-
-FLAGS = -g -Wall -Wextra -Werror -std=c++98
+CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp \
 	ClapTrap.cpp
 
 OBJ = $(SRCS:%.cpp=%.o)
 
-RM = rm -f
+RM = rm -rdf
 
+ERASE		=	\033[2K\r
+BLUE		=	\033[34m
+YELLOW		=	\033[33m
+GREEN		=	\033[32m
+END			=	\033[0m
 
-all: ${NAME}
+all: $(NAME)
 
 %.o: %.cpp
-	$(CC) $(FLAGS) -O2 -c $< -o $< -o $@
+	$(CC) $(CFLAGS) -O2 -c $< -o $< -o $@
+	printf "$(BLUE)-> $<$(END)\n"
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	printf "$(GREEN)$(NAME) made$(END)\n"
 
 clean:
 	$(RM) $(OBJ)
+	printf "$(YELLOW)$(OBJ) removed$(END)\n"
 
-fclean:
+fclean: clean
 	$(RM) $(OBJ) $(NAME)
+	printf "$(YELLOW)$(NAME) removed$(END)\n"
 
 re:	fclean all
 
