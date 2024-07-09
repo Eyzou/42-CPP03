@@ -3,7 +3,7 @@ CC = c++
 CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp \
-	ClapTrap.cpp
+		ClapTrap.cpp
 
 OBJ = $(SRCS:%.cpp=%.o)
 
@@ -19,19 +19,19 @@ all: $(NAME)
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -O2 -c $< -o $< -o $@
-	printf "$(BLUE)-> $<$(END)\n"
+	@echo "$(BLUE)-> compiling $<$(END)"
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	printf "$(GREEN)$(NAME) made$(END)\n"
+	@echo "$(GREEN)$(NAME) successfully compiled$(END)"
 
 clean:
 	$(RM) $(OBJ)
-	printf "$(YELLOW)$(OBJ) removed$(END)\n"
+	@echo "$(YELLOW)$(OBJ) Object file removed$(END)"
 
 fclean: clean
 	$(RM) $(OBJ) $(NAME)
-	printf "$(YELLOW)$(NAME) removed$(END)\n"
+	@echo "$(YELLOW)$(NAME) removed$(END)"
 
 re:	fclean all
 
