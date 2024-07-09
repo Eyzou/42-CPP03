@@ -1,0 +1,9 @@
+# Ignore .o files
+*.o
+
+# Ignore executable files (no extension under Linux)
+# Assuming executables have the same name as your project directories (like ClapTrap, ScavTrap, FragTrap)
+ClapTrap
+ScavTrap
+FragTrap
+DiamondTrap
