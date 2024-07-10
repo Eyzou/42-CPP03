@@ -12,6 +12,7 @@ int main ()
     poulet.attack("peppa pig");
     poulet.takeDamage(9);
     poulet.display();
+	poulet.whoAmI();
 
     std::cout << std::endl;
 

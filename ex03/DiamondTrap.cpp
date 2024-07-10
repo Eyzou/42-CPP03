@@ -1,22 +1,22 @@
 
 #include "DiamondTrap.h"
 
-DiamondTrap::DiamondTrap()
+DiamondTrap::DiamondTrap() : ClapTrap("Default_clap")
 {
-    std::cout << "DiamonTrap - Default constructor called" << std::endl;
     this->m_name = "Default";
     this->m_hit = this->FragTrap::m_hit;
     this->m_energy = this->ScavTrap::m_energy;
     this->m_damage = this->FragTrap::m_damage;
+	std::cout << "DiamonTrap - Default constructor called for : " << m_name << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name + "_clap_name"), ScavTrap(name + "_clap_name")
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
 {
-    std::cout << "DiamonTrap - Name constructor called" << std::endl;
-    this->m_name = name;
+	this->m_name = name;
     this->m_hit = this->FragTrap::m_hit;
     this->m_energy = this->ScavTrap::m_energy;
     this->m_damage = this->FragTrap::m_damage;
+	std::cout << "DiamonTrap - Name constructor called for : " << m_name << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &src): ClapTrap(src), FragTrap(src), ScavTrap(src)
@@ -51,7 +51,7 @@ void DiamondTrap::display() const
 
 void    DiamondTrap::whoAmI() const
 {
-    std::cout << "Hello I am :" << this->m_name << std::endl;
+    std::cout << "Hello I am : " << this->m_name << " and my Parent ClapTrap is "<< ClapTrap::m_name << std::endl;
 }
 
 void DiamondTrap::attack(const std::string& target)

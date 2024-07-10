@@ -18,6 +18,7 @@ class DiamondTrap: public FragTrap, public ScavTrap
 
 		void whoAmI() const;
 		void attack(const std::string &target);
+		//testing purpose
 		void display() const;
 
 	private:

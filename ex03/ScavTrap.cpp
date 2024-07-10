@@ -4,7 +4,7 @@
 
 ScavTrap::ScavTrap() : ClapTrap("Default")
 {
-    std::cout << "ScavTrap - Default constructor called" << std::endl;
+    std::cout << "ScavTrap - Default constructor called for : " << m_name << std::endl;
     this->m_hit = 100;
     this->m_energy = 50;
     this->m_damage = 20;
@@ -13,7 +13,7 @@ ScavTrap::ScavTrap() : ClapTrap("Default")
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    std::cout << "ScavTrap - Name constructor called" << std::endl;
+    std::cout << "ScavTrap - Name constructor calledfor : " << m_name << std::endl;
     this->m_hit = 100;
     this->m_energy = 50;
     this->m_damage = 20;
